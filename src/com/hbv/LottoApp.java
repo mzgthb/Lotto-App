@@ -1,5 +1,8 @@
 package com.hbv;
 
+import com.hbv.lottery.Eurojackpot;
+import com.hbv.lottery.Lotto;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,9 +15,17 @@ public class LottoApp {
         Lottery lottery = initLottery();
 
         switch (lottery) {
-            case LOTTO -> System.out.println("Du hast LOTTO ausgewählt!");
-            case EUROJACKPOT -> System.out.println("Du hast EUROJACKPOT ausgewaehlt!");
-            default -> System.out.println("Du hast EUROJACKPOT ausgewaehlt!");
+            case LOTTO:
+                Lotto lotto = new Lotto();
+                lotto.start();
+                break;
+            case EUROJACKPOT:
+                Eurojackpot eurojackpot = new Eurojackpot();
+                eurojackpot.start();
+                break;
+            default:
+                lotto = new Lotto();
+                lotto.start();
         }
     }
 
