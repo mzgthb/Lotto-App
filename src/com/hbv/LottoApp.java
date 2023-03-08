@@ -13,7 +13,6 @@ public class LottoApp {
 
     public static void main(String[] args) throws IOException {
         Lottery lottery = initLottery();
-
         switch (lottery) {
             case LOTTO:
                 Lotto lotto = new Lotto();

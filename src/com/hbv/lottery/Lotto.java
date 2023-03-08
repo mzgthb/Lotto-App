@@ -9,12 +9,13 @@ import java.io.InputStreamReader;
 public class Lotto implements Generator {
 
     int[] numbers = new int[6];
-    int[] unluckyNumbers;
+    int[] unluckyNumbers = new int[6];
 
     public void start() throws IOException {
         askForUnluckyNumbers();
-        for(int i = 0; i < numbers.length; ++i) {
-            System.out.print(numbers[i] + " ");
+        System.out.print("Deine Zahlen lauten: ");
+        for (int number : numbers) {
+            System.out.print(number + " ");
         }
     }
 
@@ -29,24 +30,43 @@ public class Lotto implements Generator {
         String input = reader.readLine();
 
         if(input.equalsIgnoreCase("Ja")) {
-           return true;
+            System.out.println("Wie viele Zahlen moechtest du ausschließen?");
+            System.out.print("Deine Auswahl: ");
+            addUnluckyNumbers(Integer.parseInt(reader.readLine()));
         } else if (input.equalsIgnoreCase("Nein")) {
-            generateNumbers();
+            generateNumbers(false);
         } else {
             System.out.println("Ungültige Antwort!");
         }
         return false;
     }
 
-    public int[] addUnluckyNumbers(int count) {
-        numbers = new int[count];
-        return unluckyNumbers;
+    public void addUnluckyNumbers(int count) throws IOException {
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(System.in));
+        for(int i = 0; i < count; ++i) {
+            System.out.print(i + 1 + ". Zahl: ");
+            unluckyNumbers[i] = Integer.parseInt(reader.readLine());
+        }
+        generateNumbers(true);
     }
 
     @Override
-    public int[] generateNumbers() {
-        for(int i = 0; i < 6; ++i) {
-            numbers[i] = (int) (Math.random() * 49);
+    public int[] generateNumbers(boolean unluckyNumbers) {
+        if(unluckyNumbers) {
+            for (int i = 0; i < 6; ++i) {
+                for(int j = 0; j < this.unluckyNumbers.length; ++j) {
+                    numbers[i] = (int) (Math.random() * 49);
+                    while(numbers[i] == this.unluckyNumbers.length) {
+                        numbers[i] = (int) (Math.random() * 49);
+                    }
+                }
+            }
+            return numbers;
+        } else {
+            for (int i = 0; i < 6; ++i) {
+                numbers[i] = (int) (Math.random() * 49);
+            }
         }
         return numbers;
     }
