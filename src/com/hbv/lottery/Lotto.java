@@ -177,10 +177,10 @@ public class Lotto implements Generator {
                 System.out.print(i + 1 + ". Zahl: ");
                 n = Integer.parseInt(reader.readLine());
 
-                // check if unlucky numbers are between 0 and 49
+                // check if unlucky numbers are between 0 and 59
                 while(n < 0 || n > 49) {
                     System.out.println("---------------------------------------------");
-                    System.out.println("Zahl nicht gueltig! (0 bis 49)");
+                    System.out.println("Zahl nicht gueltig! (0 bis 50)");
                     System.out.println("---------------------------------------------");
                     System.out.print(i + 1 + ". Zahl: ");
                     n = Integer.parseInt(reader.readLine());
