@@ -1,7 +1,10 @@
 package com.hbv;
 
 public interface Generator {
+    void start();
     void getArray(int[] arr);
-    void sortArray(int[] arr);
-    int[] generateNumbers(boolean unluckyNumbers);
+    void checkArrayValues();
+    void askForUnluckyNumbers();
+    void addUnluckyNumbers();
+    void generateNumbers(boolean unluckyNumbers);
 }
