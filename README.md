@@ -85,6 +85,8 @@ Datei: *Eurojackpot.java*
 Datei: *LottoTest.java und EurojackpotTest.java*
 
 ##### Mit den Unittests prueft man, ob ausgewaehlte Funktionen so funktionieren, wie man diese erwartet. In diesem Fall uerprueft man, ob die Werte in dem Arrays mit den generierten Zahlen zwischen 0 und 49 liegt (6aus49), 0 und 50 + 0 aund 20 (Eurojackpot), außerdem ob die Werte einzigartig sind und es nicht um doppelte Werte handelt. Zudem gibt es eine Funktion zum Pruefen der Unglueckszahlen, diesen Wert kann man entweder auf "true" oder "false" einstellen und somit die Funktion der Methode pruefen.
+
+![Klassendiagramm](https://user-images.githubusercontent.com/126078900/224562850-9e5d3ec0-741d-432f-977a-eb8674122e1d.png)
  
 ## Dokumentation fuer Anwender
 1. Anwendung starten
