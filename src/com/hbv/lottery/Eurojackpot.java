@@ -60,17 +60,18 @@ public class Eurojackpot extends Lotto {
                 numbers[i] = (int) (Math.random() * 50);
             }
             for(int i = 0; i < numbers.length; i++) {
-                for(int j = 0; j < numbers.length; j++) {
+                for(int j = 0; j < 6; j++) {
                     while(numbers[i] == this.unluckyNumbers[j]) {
                         numbers[i] = (int) (Math.random() * 50);
                     }
                 }
             }
+
             for(int i = 0; i < numbers2.length; i++) {
                 numbers2[i] = (int) (Math.random() * 10);
             }
             for(int i = 0; i < numbers2.length; i++) {
-                for(int j = 0; j < numbers2.length; j++) {
+                for(int j = 0; j < 2; j++) {
                     while(numbers2[i] == this.unluckyNumbers[j]) {
                         numbers2[i] = (int) (Math.random() * 10);
                     }
