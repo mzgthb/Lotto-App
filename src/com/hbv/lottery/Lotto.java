@@ -134,6 +134,10 @@ public class Lotto implements Generator {
                     bwriter.write("");
                     bwriter.close();
                     askGenerateUnluckyNumbers();
+                } else {
+                    System.out.println("---------------------------------------------");
+                    System.out.println("Ungueltigt Auswahl!");
+                    System.out.println("---------------------------------------------");
                 }
             } catch (IOException e) {
                 System.out.println("Fehler: " + e.getMessage());
