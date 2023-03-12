@@ -6,5 +6,8 @@ public interface Generator {
     void checkArrayValues();
     void askForUnluckyNumbers();
     void addUnluckyNumbers();
+    boolean checkUnluckyNumbers();
+    void saveUnluckyNumbers();
+    void askGenerateUnluckyNumbers();
     void generateNumbers(boolean unluckyNumbers);
 }
